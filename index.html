@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Hoja de estilo CSS-->
+    <link rel="stylesheet" href="style.css">
+    <!--CDN De SweetAlert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="shortcut icon" href="favicon/logosteelblock-_2_.ico" type="image/x-icon">
+    <title>Steel Block - Inicio</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#inicio" class="logo">
+                <img src="img/logosteelblock.png" alt="Logo Steel Block"> Steel Block
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                <li><a href="#simulador_interactivo">Simulador Interactivo</a></li>
+                <li><a href="proyectos_destacados.html">Proyectos Destacados</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--Inicio-->
+    <section id="inicio">
+        <div class="image-container">
+            <img src="img/fotoportada.gif" alt="Imagen Principal">
+            <div class="overlay">
+                <h1 class="typing-text">Steel Block - Construyendo Sueños</h1>
+                <a href="#simulador_interactivo" class="button">Prueba nuestro simulador interactivo</a>
+            </div>
+    </section>
+    <!--Sobre nosotros-->
+    <section id="sobre-nosotros">
+        <h2>Sobre Nosotros</h2>
+        <div class="grid_sobre_nosotros">
+            <div class="historia">
+                <h3>Nuestra Historia</h3>
+                <p>SteelBlock nació con el sueño de redefinir el sector de la construcción mediante la innovación y la calidad. Desde nuestros humildes comienzos, hemos crecido hasta convertirnos en un referente en proyectos de arquitectura y construcción sostenible.</p>
+            </div>
+            <div class="historia_imagen">
+                <img src="img/historia.jpg" alt="">
+            </div>
+            <div class="mision">
+                <h3>Misión</h3>
+                <p>Brindar soluciones constructivas de alta calidad que superen las expectativas de nuestros clientes, fomentando la innovación y la sostenibilidad.</p>
+            </div>
+            <div class="mision_imagen">
+                <img src="img/mision.jpg" alt="">
+            </div>
+            <div class="vision">
+                <h3>Visión</h3>
+                <p>Ser líderes en el sector de la construcción, reconocidos por nuestra excelencia, compromiso y responsabilidad social.</p>
+            </div>
+            <div class="vision_imagen">
+                <img src="img/vision.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <!--Nuestros servicios-->
+        <section id="nuestros-servicios">
+        <h2>Nuestros Servicios</h2>
+            <div class="servicios">
+                <div class="interiores">
+                    <img src="img/interior.jpg" alt="">
+                    <p>Interior</p>
+                </div>
+                <div class="exteriores">
+                    <img src="img/exterior.jpg" alt="">
+                    <p>Exterior</p>
+                </div>
+                <div class="remodelaciones">
+                    <img src="img/remodelaciones.jpg" alt="">
+                    <p>Remodelaciones</p>
+                </div>
+            </div>
+    </section>
+    <!--Testimonios-->
+    <section id="testimonios_clientes">
+        <h2>Clientes satisfechos</h2>
+        <div class="testimonios">
+            <div class="imagen_persona1">
+                <img src="img/juanperez.jpg" alt="">
+            </div>
+            <div class="imagen_persona2">
+                <img src="img/maríalópez.jpg" alt="">
+            </div>
+            <div class="imagen_persona3">
+                <img src="img/carlosramírez.jpg" alt="">
+            </div>
+            <div class="testimonio1">
+                <p>"SteelBlock hizo realidad el proyecto de mis sueños. Su equipo fue profesional y atento en todo momento."</p>
+                <h3>- Juan Pérez</h3>
+            </div>
+            <div class="testimonio2">
+                <p>"La calidad de sus construcciones es excepcional. Recomiendo SteelBlock sin dudarlo."</p>
+                <h3>- María López</h3>
+            </div>
+            <div class="testimonio3">
+                <p>"Confianza y profesionalismo en cada paso. Fue un placer trabajar con SteelBlock."</p>
+                <h3>- Carlos Ramírez</h3>
+            </div>
+        </div>
+    </section>
+    <!--Simulador interactivo-->
+    <section id="simulador_interactivo">
+        <h2>Simulador Interactivo</h2>
+        <div class="simulador">
+        <form id="simulador-form">
+            <div class="content">
+                <label class="encabezado">Seleccione el tipo de tecnología:</label>
+                <div class="tecnologia" id="tecnologia">
+                <input type="radio" id="tradicional" name="tecnología" value="tradicional">
+                <label for="tradicional">Tradicional</label>
+                <input type="radio" id="steel-frame" name="tecnología" value="steel-frame">
+                <label for="steel-frame">Steel Frame</label>
+            </div>
+            </div>
+            <div class="content">
+                <div class="metros" id="metros">
+                <label for="area">Cantidad de metros cuadrados:</label>
+                <input type="number" id="area" name="area" placeholder="Escriba la cantidad de metros cuadrados que desea calcular: Ej (200, 300, etc.)">
+            </div>
+            </div>
+            <div class="content">
+                <label class="encabezado">¿Desea incluir piscina? (Opcional)</label>
+                <div class="piscina" id="piscina">
+                    <input type="radio" id="piscina-si" name="piscina" value="si">
+                    <label for="piscina-si">Sí</label>
+                    <input type="radio" id="piscina-no" name="piscina" value="no">
+                    <label for="piscina-no">No</label>
+                </div>
+            </div>
+            <div class="content">
+                <label class="encabezado">¿Quiere incluir quincho? (Opcional)</label>
+                <div class="quincho" id="quincho">
+                <input type="radio" id="quincho-si" name="quincho" value="si">
+                <label for="quincho-si">Sí</label>
+                <input type="radio" id="quincho-no" name="quincho" value="no">
+                <label for="quincho-no">No</label>
+            </div>
+            </div>
+            <div class="content">
+                <label class="encabezado">¿De cuántas plantas quiere que sea su casa?</label>
+                <div class="plantas" id="plantas">
+                <input type="radio" id="un-piso" name="pisos" value="1">
+                <label for="un-piso">1 Planta</label>
+                <input type="radio" id="dos-pisos" name="pisos" value="2">
+                <label for="dos-pisos">2 Plantas</label>
+            </div>
+            </div>
+            <div class="content">
+                <label class="encabezado">Seleccione el tipo de material <b>(Construcción tradicional)</b>:</label>
+                <div class="material" id="materiales">
+                <input type="radio" id="ladrillo-comun" name="material" value="ladrillo-comun">
+                <label for="ladrillo-comun">Ladrillo común</label>
+                <input type="radio" id="ladrillo-bloque" name="material" value="ladrillo-bloque">
+                <label for="ladrillo-bloque">Ladrillo bloque</label>
+                <input type="radio" id="hormigon" name="material" value="hormigon">
+                <label for="hormigon">Hormigón armado</label>
+            </div>
+            </div>
+            <div class="content">
+                <label class="encabezado">¿De qué material le gustaría que sea el revestimiento? <b>(Construcción Steel Frame)</b>:</label>
+                <div class="revestimiento" id="revestimientos">
+                <input type="radio" id="placas-yeso" name="revestimiento" value="placas-yeso">
+                <label for="placas-yeso">Placas de yeso</label>
+                <input type="radio" id="placas-mdf" name="revestimiento" value="placas-mdf">
+                <label for="placas-mdf">Placas MDF</label>
+            </div>
+            </div>
+            <div class="content">
+                <p>Precio final: $</p>
+            </div>
+            <button type="submit">Aceptar</button>
+            <button type="reset">Borrar</button>
+        </form>
+        <!--Formulario para contactarse con la empresa-->
+        <div class="contacto">
+            <h2>Enviar presupuesto</h2>
+            <form id="email-form">
+                <div class="content">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+                </div>
+                <div class="content">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="Escribe tu correo" required>
+                </div>
+                <div class="content">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Escribe un mensaje (opcional)"></textarea>
+                </div>
+                <button type="button" id="enviar-correo">Enviar presupuesto</button>
+            </form>
+        </div>
+    </div>
+    <!--Enlace al archivo JavaScript-->
+    <script src="miarchivo.js"></script>
+    </section>
+    <!--Footer-->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; Steel Block. Todos los derechos reservados.</p>
+            <p>Contacto: <a href="mailto:contacto@steelblock.com" class="footer-link">contacto@steelblock.com</a></p>
+        </div>
+        <div class="footer-socials">
+            <a href="https://www.instagram.com" target="_blank" class="footer-link"><img src="img/instagram.png" alt=""></a>
+            <a href="https://www.linkedin.com" target="_blank" class="footer-link"><img src="img/linkedin.png" alt=""></a>
+            <a href="https://www.facebook.com" target="_blank" class="footer-link"><img src="img/facebook.png" alt=""></a>
+        </div>
+    </footer>
+</body>
+</html>

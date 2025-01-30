@@ -1,0 +1,1002 @@
+/* Reseteo General */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/*Fuentes descargadas y usadas*/
+
+@font-face {
+    font-family: "poppins-extralight";
+    src: url(fonts/Poppins/Poppins-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: "poppins-semibold";
+    src: url(fonts/Poppins/Poppins-SemiBold.ttf);
+}
+
+/* Estilo de Body */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Estilo de Header */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    z-index: 1000;
+}
+
+header .logo {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el texto con la imagen */
+    font-size: 22px;
+    font-family: "poppins-semibold";
+    font-weight: bold;
+    color: #1e1f1e;
+    text-decoration: none;
+}
+
+
+header .logo img {
+    width: 60px;
+    margin-right: 10px; /* Añade espacio entre la imagen y el texto */
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    padding: 0 10px;
+    color: #1e1f1e;
+    font-family: "poppins-extralight";
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #a26028;
+}
+
+/*Inicio*/
+
+#inicio {
+    text-align: center;
+    padding: 50px 20px;
+    border-bottom: 1px solid #a26028;
+}
+
+#inicio p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Inagen de Inicio */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Utiliza toda la altura de la ventana */
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen cubra todo el contenedor */
+    display: block;
+    filter: brightness(60%);
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el contenido */
+    text-align: center;
+    color: #fff;
+    font-family: "poppins-semibold";
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.overlay h1 {
+    font-size: 72px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #fff;
+    color: #1e1f1e;
+    padding: 10px 40px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #a26028;
+    color: #fff;
+}
+
+  /* Estilos para diseño responsivo */
+@media (max-width: 768px) {
+    .overlay h1 {
+    font-size: 2.5rem;
+    }
+
+    .button {
+    padding: 10px 25px;
+    font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay h1 {
+    font-size: 2rem;
+    }
+
+    .button {
+    padding: 8px 20px;
+    font-size: 12px;
+    }
+}
+
+  /* Animación para el efecto de escritura */
+@keyframes typing {
+    from {
+    width: 0;
+    }
+    to {
+    width: 100%;
+    }
+}
+
+  /* Animación para el parpadeo del cursor */
+@keyframes blink {
+    50% {
+    border-color: transparent;
+    }
+}
+
+.typing-text {
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+    border-right: 3px solid #fff; /* El cursor simulado */
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0; /* Inicialmente el texto está oculto */
+    animation: typing 2s steps(30) 1s forwards, blink 0.75s step-end infinite;
+}
+
+/* Sobre Nosotros */
+
+#sobre-nosotros {
+    padding: 40px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #a26028;
+}
+
+#sobre-nosotros h2 {
+    font-size: 40px;
+    text-align: center;
+    color: #1e1f1e;
+    font-family: "poppins-semibold";
+    margin-bottom: 20px;
+}
+
+#sobre-nosotros h3 {
+    font-size: 22px;
+    font-family: "poppins-semibold";
+    color: #a26028;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#sobre-nosotros p, #sobre-nosotros ul {
+    font-size: 15px;
+    font-family: "poppins-extralight";
+    color: #1e1f1e;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+#sobre-nosotros ul li {
+    margin-bottom: 5px;
+}
+
+.grid_sobre_nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 50px 50px;
+    grid-auto-flow: row;
+    align-items: start;
+    grid-template-areas:
+        "historia historia_imagen"
+        "mision_imagen mision"
+        "vision vision_imagen";
+}
+
+/* Aplicando responsividad a la grilla */
+@media (max-width: 768px) {
+    .grid_sobre_nosotros {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+.grid_sobre_nosotros img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.historia {
+    grid-area: historia;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    padding: 10px;
+}
+
+.historia_imagen {
+    grid-area: historia_imagen;
+    text-align: center;
+    padding: 10px;
+}
+
+.mision {
+    grid-area: mision;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    padding: 10px;
+}
+
+.mision_imagen {
+    grid-area: mision_imagen;
+    text-align: center;
+    padding: 10px;
+}
+
+.vision {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    padding: 10px;
+}
+
+.vision_imagen {
+    grid-area: vision_imagen;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Servicios */
+
+#nuestros-servicios {
+    padding: 40px 20px;
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    border-bottom: 1px solid #a26028;
+}
+
+#nuestros-servicios h2 {
+    font-size: 40px;
+    text-align: center;
+    color: #1e1f1e;
+    font-family: "poppins-semibold";
+    margin-bottom: 20px;
+}
+
+#nuestros-servicios p {
+    font-size: 22px;
+    font-family: "poppins-semibold";
+    color: #fff;
+    line-height: 1.6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+.servicios div {
+    position: relative;
+    display: inline-block;
+}
+
+.servicios {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 40px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "interiores exteriores remodelaciones";
+}
+
+.servicios img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    filter: brightness(60%);
+}
+
+.interiores {
+    grid-area: interiores;
+}
+
+.exteriores {
+    grid-area: exteriores;
+}
+
+.remodelaciones {
+    grid-area: remodelaciones;
+}
+
+/* Testimonios */
+
+#testimonios_clientes {
+    padding: 40px 20px;
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    border-bottom: 1px solid #a26028;
+}
+
+#testimonios_clientes h2 {
+    font-size: 40px;
+    text-align: center;
+    color: #1e1f1e;
+    font-family: "poppins-semibold";
+    margin-bottom: 3%;
+}
+
+#testimonios_clientes h3 {
+    font-size: 20px;
+    text-align: center;
+    color: #a26028;
+    font-family: "poppins-semibold";
+    margin-bottom: 20px;
+}
+
+#testimonios_clientes p {
+    font-size: 15px;
+    font-family: "poppins-extralight";
+    color: #1e1f1e;
+    margin: 50px;
+    position: relative;
+}
+
+.testimonios img {
+    width: 40%;
+    border-radius: 100%;
+    border: 3px solid #1e1f1e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+.testimonios {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px 50px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "imagen_persona1 imagen_persona2 imagen_persona3"
+    "testimonio1 testimonio2 testimonio3";
+}
+
+.imagen_persona1 {
+    grid-area: imagen_persona1;
+}
+
+.imagen_persona2 {
+    grid-area: imagen_persona2;
+}
+
+.imagen_persona3 {
+    grid-area: imagen_persona3;
+}
+
+.testimonio1 {
+    grid-area: testimonio1;
+}
+
+.testimonio2 {
+    grid-area: testimonio2;
+}
+
+.testimonio3 {
+    grid-area: testimonio3;
+}
+
+
+/*Footer*/
+
+.footer {
+    background-color: #fff;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer p {
+    font-size: 15px;
+    font-family: "poppins-extralight";
+    color: #1e1e1e;
+}
+
+.footer-content {
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    color: #a26028;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-socials a {
+    margin: 0 10px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.footer-socials a img {
+    width: 30px;
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.footer-socials a:hover {
+    transform: rotateY(360deg);
+}
+
+.footer-socials a:hover img {
+    transform: scale(1.2);
+    filter: brightness(1.5) saturate(1.2);
+}
+
+/* Simulador Interactivo estilos 🪨 */
+
+#simulador_interactivo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #a26028;
+}
+
+#simulador-form {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#simulador_interactivo h2 {
+    font-size: 40px;
+    text-align: center;
+    color: #1e1f1e;
+    font-family: "poppins-semibold";
+    margin-bottom: 20px;
+}
+
+/* Estilos de los grupos del formulario */
+.content {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content p {
+    background-color: #fff;
+    padding: 10px;
+    border: 1.5px solid #a26028;
+    text-align: center;
+    color: #1e1e1e;
+    font-weight: bold;
+    font-family: "poppins-semibold";
+}
+
+.encabezado {
+    font-family: "poppins-semibold";
+    font-size: 20px;
+    color: #a26028;
+}
+
+.tecnologia {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.piscina {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.quincho {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.plantas {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.material {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.revestimiento {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+label {
+    margin-bottom: 5px;
+    text-align: left;
+    font-family: "poppins-extralight";
+    font-size: 15px;
+    color: #1e1e1e;
+    margin-right: 100px;
+}
+
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #a26028;
+    font-size: 15px;
+    font-family: "Poppins-extralight";
+    color: #1e1e1e;
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+input[type="number"]:invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 8px rgba(220, 53, 69, 0.5);
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    position: absolute;
+    opacity: 0;
+    pointer-events: all;
+}
+
+input[type="radio"] + label {
+    position: relative;
+    padding-left: 35px;
+    display: inline-block;
+    cursor: pointer;
+    color: #1e1e1e;
+    transition: all 0.3s ease;
+    margin-right: 20px;
+}
+
+input[type="radio"] + label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 1px solid #1e1e1e;
+    border-radius: 50%;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="radio"]:checked + label::before {
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(252, 254, 255, 0.3);
+}
+
+input[type="radio"]:checked + label {
+    color: #000000;
+}
+
+input[type="radio"] + label:hover::before {
+    border-color: #a26028;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+button {
+    margin: 10px auto;
+    display: block;
+    background-color: #a26028;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    font-family: "poppins-semibold";
+    color: #fff;
+    border: 1px solid #1e1f1e;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button[type="reset"] {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-5px);
+    background-color: #fff;
+    color: #a26028;
+    border: 1px solid #a26028;
+}
+
+button[type="reset"]:hover {
+    background-color: #fff;
+    color: #1f1f1f;
+    transform: translateY(-5px);
+    border: 1px solid #1e1e1e;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00000080;
+}
+
+.simulador-form p {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Formulario de envío de correo electrónico */
+
+.contacto {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.contacto h2 {
+    font-size: 40px;
+    text-align: center;
+    color: #1e1f1e;
+    font-family: "poppins-semibold";
+    margin-bottom: 20px;
+}
+
+.contacto label {
+    font-size: 15px;
+    font-family: "poppins-extralight";
+    color: #1e1e1e;
+    margin-bottom: 5px;
+}
+
+.contacto input, .contacto textarea {
+    font-family: "poppins-extralight";
+    font-size: 15px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #a26028;
+    margin-bottom: 10px;
+}
+
+.contacto textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* === Responsive Design === */
+
+/* Ajustes generales para tablets (pantallas medianas) */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Ajusta el tamaño general del texto */
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #sobre-nosotros h2, #nuestros-servicios h2, #testimonios_clientes h2 {
+        font-size: 32px; /* Reduce el tamaño de los títulos */
+    }
+
+    .grid_sobre_nosotros {
+        grid-template-columns: 1fr; /* Disposición en una sola columna */
+        gap: 20px;
+    }
+
+    .servicios {
+        grid-template-columns: 1fr; /* Los servicios se apilan */
+    }
+
+    .testimonios {
+        grid-template-columns: 1fr; /* Testimonios apilados */
+    }
+
+    .overlay h1 {
+        font-size: 24px; /* Reduce el texto del encabezado */
+    }
+}
+
+/* Ajustes para móviles (pantallas pequeñas) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Reduce el tamaño del texto */
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    header .logo img {
+        width: 40px; /* Ajusta el tamaño del logo */
+    }
+
+    header nav ul li a {
+        font-size: 12px; /* Reduce el tamaño de las opciones del menú */
+    }
+
+    #inicio {
+        padding: 30px 10px;
+    }
+
+    .image-container {
+        height: 50vh; /* Reduce la altura de la imagen principal */
+    }
+
+    .overlay h1 {
+        font-size: 18px; /* Encabezado más pequeño */
+    }
+
+    .content label, .contacto label {
+        font-size: 12px; /* Reduce las etiquetas del formulario */
+    }
+
+    button {
+        font-size: 16px; /* Botones más pequeños */
+        width: 90%; /* Ocupa casi todo el ancho */
+    }
+
+    .contacto h2 {
+        font-size: 24px; /* Reduce el tamaño del encabezado */
+    }
+}
+
+/* Ajustes para pantallas grandes (PC o laptops) */
+@media (min-width: 1200px) {
+    #simulador_interactivo {
+        max-width: 1100px;
+        margin: 0 auto; /* Centra el simulador */
+    }
+
+    .grid_sobre_nosotros {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px; /* Espaciado más amplio */
+    }
+
+    .servicios {
+        grid-template-columns: 1fr 1fr 1fr; /* Diseño en tres columnas */
+    }
+
+    .testimonios {
+        grid-template-columns: 1fr 1fr 1fr; /* Testimonios en tres columnas */
+    }
+}
+
+/* PROYECTOS DESTACADOS */
+#proyectos_destacados {
+    padding: 100px;
+    background-color: #fff;
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+#proyectos_destacados h2 {
+    font-size: 40px;
+    text-align: center;
+    color: #1e1f1e;
+    font-family: "poppins-semibold";
+    margin-bottom: 20px;
+}
+
+#proyectos_destacados p {
+    font-size: 22px;
+    font-family: "poppins-semibold";
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+#proyectos_destacados .parrafo_simple {
+    font-family: "poppins-extralight";
+    font-size: 15px;
+    color: #1e1e1e;
+    text-shadow: none;
+    line-height: 1.6;
+}
+.proyectos_grid {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px 30px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "imagen1 imagen2 imagen3"
+    "imagen4 imagen5 imagen6";
+}
+
+.proyectos_grid div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proyectos_grid img {
+    width: 550px;
+    height: 550px;
+    object-fit: cover;
+    display: block;
+}
+
+.proyectos_grid p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: "poppins-semibold";
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.proyectos_grid div:hover p {
+    opacity: 1;
+    color: #fff;
+}
+
+.proyectos_grid div:hover img {
+    filter: brightness(50%);
+}
+
+.imagen1 {
+    grid-area: imagen1;
+}
+
+.imagen2 {
+    grid-area: imagen2;
+}
+
+.imagen3 {
+    grid-area: imagen3;
+}
+
+.imagen4 {
+    grid-area: imagen4;
+}
+
+.imagen5 {
+    grid-area: imagen5;
+}
+
+.imagen6 {
+    grid-area: imagen6;
+}
+
+.decoracion {
+    width: 100%;
+    height: 340px;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.decoracion h2 {
+    font-size: 28px;
+    color: #fff;
+    font-family: "poppins-semibold";
+    margin-bottom: 20px;
+}
+
+.boton {
+    display: inline-block;
+    background-color: #fff;
+    color: #1e1f1e;
+    padding: 10px 40px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+    font-family: "poppins-semibold";
+}
+
+.boton:hover {
+    background-color: #a26028;
+    color: #fff;
+}
