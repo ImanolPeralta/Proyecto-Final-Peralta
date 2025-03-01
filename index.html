@@ -8,24 +8,38 @@
     <!--CDN De SweetAlert-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="shortcut icon" href="favicon/logosteelblock-_2_.ico" type="image/x-icon">
+    <!--CDN AOS CSS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Steel Block - Inicio</title>
 </head>
 <body>
     <header>
-        <div class="container">
-            <a href="#inicio" class="logo">
-                <img src="img/logosteelblock.png" alt="Logo Steel Block"> Steel Block
-            </a>
+    <div class="container">
+        <a href="#inicio" class="logo">
+            <img src="img/logosteelblock.png" alt="Logo Steel Block"> Steel Block
+        </a>
+
+        <!-- Ícono del menú hamburguesa -->
+        <div class="hamburger" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-                <li><a href="#simulador_interactivo">Simulador Interactivo</a></li>
-                <li><a href="proyectos_destacados.html">Proyectos Destacados</a></li>
-            </ul>
-        </nav>
-    </header>
+    </div>
+    <!-- Menú de navegación -->
+    <nav id="nav-links">
+        <ul>
+            <!-- Botón para alternar el modo oscuro -->
+            <button id="theme-toggle">
+                <span id="theme-icon"></span>
+            </button>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+            <li><a href="#simulador_interactivo">Simulador Interactivo</a></li>
+            <li><a href="proyectos_destacados.html">Proyectos Destacados</a></li>
+        </ul>
+    </nav>
+</header>
     <!--Inicio-->
     <section id="inicio">
         <div class="image-container">
@@ -37,34 +51,34 @@
     </section>
     <!--Sobre nosotros-->
     <section id="sobre-nosotros">
-        <h2>Sobre Nosotros</h2>
+        <div data-aos="fade-down"><h2>Sobre Nosotros</h2></div>
         <div class="grid_sobre_nosotros">
             <div class="historia">
                 <h3>Nuestra Historia</h3>
                 <p>SteelBlock nació con el sueño de redefinir el sector de la construcción mediante la innovación y la calidad. Desde nuestros humildes comienzos, hemos crecido hasta convertirnos en un referente en proyectos de arquitectura y construcción sostenible.</p>
             </div>
             <div class="historia_imagen">
-                <img src="img/historia.jpg" alt="">
+                <div data-aos="flip-left"><img src="img/historia.jpg" alt=""></div>
             </div>
             <div class="mision">
                 <h3>Misión</h3>
                 <p>Brindar soluciones constructivas de alta calidad que superen las expectativas de nuestros clientes, fomentando la innovación y la sostenibilidad.</p>
             </div>
             <div class="mision_imagen">
-                <img src="img/mision.jpg" alt="">
+                <div data-aos="flip-left"><img src="img/mision.jpg" alt=""></div>
             </div>
             <div class="vision">
                 <h3>Visión</h3>
                 <p>Ser líderes en el sector de la construcción, reconocidos por nuestra excelencia, compromiso y responsabilidad social.</p>
             </div>
             <div class="vision_imagen">
-                <img src="img/vision.jpg" alt="">
+                <div data-aos="flip-left"><img src="img/vision.jpg" alt=""></div>
             </div>
         </div>
     </section>
     <!--Nuestros servicios-->
         <section id="nuestros-servicios">
-        <h2>Nuestros Servicios</h2>
+        <div data-aos="fade-down"><h2>Nuestros Servicios</h2></div>
             <div class="servicios">
                 <div class="interiores">
                     <img src="img/interior.jpg" alt="">
@@ -82,16 +96,16 @@
     </section>
     <!--Testimonios-->
     <section id="testimonios_clientes">
-        <h2>Clientes satisfechos</h2>
+        <div data-aos="fade-down"><h2>Clientes satisfechos</h2></div>
         <div class="testimonios">
             <div class="imagen_persona1">
-                <img src="img/juanperez.jpg" alt="">
+                <div data-aos="zoom-in"><img src="img/juanperez.jpg" alt=""></div>
             </div>
             <div class="imagen_persona2">
-                <img src="img/maríalópez.jpg" alt="">
+                <div data-aos="zoom-in"><img src="img/maríalópez.jpg" alt=""></div>
             </div>
             <div class="imagen_persona3">
-                <img src="img/carlosramírez.jpg" alt="">
+                <div data-aos="zoom-in"><img src="img/carlosramírez.jpg" alt=""></div>
             </div>
             <div class="testimonio1">
                 <p>"SteelBlock hizo realidad el proyecto de mis sueños. Su equipo fue profesional y atento en todo momento."</p>
@@ -109,7 +123,7 @@
     </section>
     <!--Simulador interactivo-->
     <section id="simulador_interactivo">
-        <h2>Simulador Interactivo</h2>
+        <div data-aos="fade-down"><h2>Simulador Interactivo</h2></div>
         <div class="simulador">
         <form id="simulador-form">
             <div class="content">
@@ -182,7 +196,7 @@
         </form>
         <!--Formulario para contactarse con la empresa-->
         <div class="contacto">
-            <h2>Enviar presupuesto</h2>
+            <div data-aos="fade-down"><h2>Enviar presupuesto</h2></div>
             <form id="email-form">
                 <div class="content">
                     <label for="nombre">Nombre:</label>
@@ -202,6 +216,12 @@
     </div>
     <!--Enlace al archivo JavaScript-->
     <script src="miarchivo.js"></script>
+    <script src="hamburguesa.js"></script>
+    <script src="darkmode.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     </section>
     <!--Footer-->
     <footer class="footer">

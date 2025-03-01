@@ -6,6 +6,142 @@
     box-sizing: border-box;
 }
 
+
+/* ======== MODO OSCURO COMPLETO ======== */
+
+/* Fondo general */
+.dark-mode {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+/* ======== Header ======== */
+.dark-mode header {
+    background-color: #1e1f1e;
+}
+
+.dark-mode .logo {
+    color: #ffffff;
+}
+
+/* ======== Navegación ======== */
+.dark-mode nav {
+    background-color: #1e1f1e;
+}
+
+.dark-mode nav ul li a {
+    color: #ffffff;
+}
+
+.dark-mode nav ul li a:hover {
+    color: #a26028;
+}
+
+/* ======== Botón de cambio de tema ======== */
+
+#theme-toggle {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Asegurar que el ícono (SVG) no se mueva */
+#theme-toggle span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Asegurar que el SVG mantiene su tamaño y cambia solo de color */
+#theme-toggle svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    transition: fill 0.3s ease-in-out;
+}
+
+/* Solo cambia de color en hover sin moverse */
+#theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Pequeño efecto sutil */
+}
+
+#theme-toggle:hover svg {
+    fill: #a26028;
+}
+
+
+@media (max-width: 768px) {
+    #theme-toggle {
+        display: block;
+        margin: 10px auto;
+        padding: 8px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+/* ======== Secciones ======== */
+.dark-mode #inicio,
+.dark-mode #sobre-nosotros,
+.dark-mode #nuestros-servicios,
+.dark-mode #testimonios_clientes,
+.dark-mode #simulador_interactivo,
+.dark-mode #proyectos_destacados {
+    background-color: #1e1f1e;
+    color: #ffffff;
+    border-bottom: 1px solid #a26028;
+}
+
+/* ======== Títulos y párrafos (corregidos) ======== */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode p {
+    color: #ffffff !important;
+}
+
+/* ======== Formularios en modo oscuro ======== */
+.dark-mode #simulador-form label,
+.dark-mode #simulador-form p {
+    color: #ffffff;
+}
+
+/* ======== Botones ======== */
+.dark-mode .button {
+    background-color: #ffffff;
+    color: #1e1f1e;
+}
+
+.dark-mode .button:hover {
+    background-color: #a26028;
+    color: #ffffff;
+}
+
+/* ======== Testimonios ======== */
+.dark-mode .testimonios p {
+    color: #ffffff;
+}
+
+/* ======== Footer ======== */
+.dark-mode .footer {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+.dark-mode .footer-link {
+    color: #a26028;
+}
+
+.dark-mode .hamburger .line {
+    background-color: white;
+}
+
+
 /*Fuentes descargadas y usadas*/
 
 @font-face {
@@ -243,13 +379,20 @@ header nav ul li a:hover {
 @media (max-width: 768px) {
     .grid_sobre_nosotros {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 50px;
+        grid-template-areas:
+        "historia"
+        "historia_imagen"
+        "mision"
+        "mision_imagen"
+        "vision"
+        "vision_imagen"
     }
 }
 
 .grid_sobre_nosotros img {
     width: 100%;
-    height: 500px;
+    height: 100%;
     object-fit: cover;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -375,6 +518,26 @@ header nav ul li a:hover {
     grid-area: remodelaciones;
 }
 
+/* Media queries para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .servicios {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+        gap: 20px; /* Espacio entre elementos */
+        grid-template-areas:
+            "interiores"
+            "exteriores"
+            "remodelaciones";
+    }
+
+    .servicios img {
+        height: 100%; /* Altura fija para móviles (ajusta según necesidad) */
+    }
+
+    #nuestros-servicios p {
+        font-size: 18px; /* Reducir el tamaño del texto para móviles */
+    }
+}
+
 /* Testimonios */
 
 #testimonios_clientes {
@@ -453,6 +616,37 @@ header nav ul li a:hover {
     grid-area: testimonio3;
 }
 
+/* Media queries para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .testimonios {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+        grid-template-rows: auto; /* Filas automáticas */
+        gap: 20px; /* Espacio entre elementos */
+        grid-template-areas:
+            "imagen_persona1"
+            "testimonio1"
+            "imagen_persona2"
+            "testimonio2"
+            "imagen_persona3"
+            "testimonio3";
+    }
+
+    .testimonios img {
+        width: 35%; /* Reducir el tamaño de las imágenes */
+    }
+
+    #testimonios_clientes p {
+        margin: 20px; /* Reducir el margen del texto */
+    }
+
+    #testimonios_clientes h2 {
+        font-size: 30px; /* Reducir el tamaño del título */
+    }
+
+    #testimonios_clientes h3 {
+        font-size: 18px; /* Reducir el tamaño del subtítulo */
+    }
+}
 
 /*Footer*/
 
@@ -506,6 +700,30 @@ header nav ul li a:hover {
     filter: brightness(1.5) saturate(1.2);
 }
 
+/* Media queries para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px 0; /* Reducir el padding para móviles */
+    }
+
+    .footer p {
+        font-size: 14px; /* Reducir el tamaño del texto */
+    }
+
+    .footer-socials a {
+        width: 40px; /* Reducir el tamaño de los íconos */
+        height: 40px;
+    }
+
+    .footer-socials a img {
+        width: 25px; /* Reducir el tamaño de las imágenes */
+    }
+
+    .footer-link {
+        margin: 0 5px; /* Reducir el margen entre enlaces */
+    }
+}
+
 /* Simulador Interactivo estilos 🪨 */
 
 #simulador_interactivo {
@@ -549,6 +767,13 @@ header nav ul li a:hover {
     color: #1e1e1e;
     font-weight: bold;
     font-family: "poppins-semibold";
+}
+
+/* Estilo del precio en modo oscuro */
+.dark-mode .content p {
+    color: #1e1f1e !important;
+    font-weight: bold;
+    background-color: #ffffff;
 }
 
 .encabezado {
@@ -709,6 +934,20 @@ button[type="reset"]:hover {
 button:focus {
     outline: none;
     box-shadow: 0 0 10px #00000080;
+}
+
+/* Modo oscuro: hacer que el botón sea visible */
+.dark-mode button[type="reset"] {
+    background-color: #1e1f1e; /* Fondo blanco */
+    color: #ffffff; /* Texto oscuro para contraste */
+    border: 1px solid #ffffff;
+}
+
+/* Efecto hover en modo oscuro */
+.dark-mode button[type="reset"]:hover {
+    background-color: #ffffff; /* Color resaltado */
+    color: #1e1f1e;
+    border: 1px solid white;
 }
 
 .simulador-form p {
@@ -999,4 +1238,150 @@ button:focus {
 .boton:hover {
     background-color: #a26028;
     color: #fff;
+}
+
+/* Decoración en Dark Mode */
+
+.dark-mode .decoracion {
+    background-color: #ffffff;
+}
+
+.dark-mode .decoracion h2 {
+    color: #1e1f1e !important;
+}
+
+.dark-mode .boton {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .boton:hover {
+    background-color: #a26028;
+    color: #ffffff;
+}
+
+/* Media queries para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    #proyectos_destacados {
+        padding: 70px 20px; /* Reducir el padding para móviles */
+    }
+
+    #proyectos_destacados h2 {
+        font-size: 30px; /* Reducir el tamaño del título */
+    }
+
+    #proyectos_destacados p {
+        font-size: 18px; /* Reducir el tamaño del texto */
+    }
+
+    .proyectos_grid {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+        grid-template-rows: auto; /* Filas automáticas */
+        gap: 20px; /* Espacio entre elementos */
+        grid-template-areas:
+            "imagen1"
+            "imagen2"
+            "imagen3"
+            "imagen4"
+            "imagen5"
+            "imagen6";
+    }
+
+    .proyectos_grid img {
+        width: 100%; /* Ancho completo para móviles */
+        height: 300px; /* Altura fija para móviles */
+    }
+
+    .decoracion {
+        height: auto; /* Altura automática para móviles */
+        padding: 40px 20px; /* Añadir padding */
+    }
+
+    .decoracion h2 {
+        font-size: 24px; /* Reducir el tamaño del título */
+    }
+
+    .boton {
+        padding: 10px 20px; /* Reducir el padding del botón */
+    }
+}
+
+/* Estilos del menú hamburguesa */
+.hamburger {
+    display: none; /* Oculto en pantallas grandes */
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1000;
+    margin-left: auto; /* Alinea el ícono a la derecha */
+}
+
+.hamburger .line {
+    width: 20px;
+    height: 2px;
+    background-color: #1e1f1e; /* Color del ícono */
+    margin: 3px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    header .container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav {
+        position: fixed;
+        top: 55px;
+        right: -100%;
+        height: calc(100vh - 60px);
+        width: 100%;
+        background-color: #fff;
+        transition: right 0.3s ease-in;
+        z-index: 999;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 20px;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    nav ul li a {
+        color: #1e1f1e; /* Color del texto */
+        font-size: 18px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: #a26028; /* Color al pasar el mouse */
+    }
+
+    /* Animación del ícono hamburguesa */
+    .hamburger.active .line:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .line:nth-child(3) {
+        transform: rotate(-45deg) translate(4px, -4px);
+    }
 }

@@ -6,6 +6,8 @@
     <!--Hoja de estilos CSS-->
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon/logosteelblock-_2_.ico" type="image/x-icon">
+    <!--CDN Animate CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <title>Steel Block - Proyectos Destacados</title>
 </head>
 <body>
@@ -14,9 +16,20 @@
             <a href="index.html" class="logo">
                 <img src="img/logosteelblock.png" alt="Logo Steel Block"> Steel Block
             </a>
+            <!-- Ícono del menú hamburguesa -->
+            <div class="hamburger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
         </div>
-        <nav>
+        </div>
+        <nav id="nav-links">
             <ul>
+                <!-- Botón para alternar el modo oscuro -->
+            <button id="theme-toggle">
+                <span id="theme-icon"></span>
+            </button>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="index.html">Sobre Nosotros</a></li>
                 <li><a href="index.html">Simulador Interactivo</a></li>
@@ -30,27 +43,27 @@
             <p class="parrafo_simple">A continuación te invitamos a ver algunos proyectos realizados recientemente.</p>
             <div class="proyectos_grid">
                 <div class="imagen1">
-                    <img src="img/cocina.jpg" alt="">
+                    <img class="animate__animated animate__pulse" src="img/cocina.jpg" alt="">
                     <p>Cocinas</p>
                 </div>
                 <div class="imagen2">
-                    <img src="img/baños.jpg" alt="">
+                    <img class="animate__animated animate__pulse" src="img/baños.jpg" alt="">
                     <p>Baños</p>
                 </div>
                 <div class="imagen3">
-                    <img src="img/interiores.jpg" alt="">
+                    <img class="animate__animated animate__pulse" src="img/interiores.jpg" alt="">
                     <p>Interiores</p>
                 </div>
                 <div class="imagen4">
-                    <img src="img/terraza.jpg" alt="">
+                    <img class="animate__animated animate__pulse" src="img/terraza.jpg" alt="">
                     <p>Terrazas</p>
                 </div>
                 <div class="imagen5">
-                    <img src="img/tradicional.jpg" alt="">
+                    <img class="animate__animated animate__pulse" src="img/tradicional.jpg" alt="">
                     <p>Tradicional</p>
                 </div>
                 <div class="imagen6">
-                    <img src="img/steelframe.jpg" alt="">
+                    <img class="animate__animated animate__pulse" src="img/steelframe.jpg" alt="">
                     <p>Steel Frame</p>
                 </div>
             </div>
@@ -60,6 +73,8 @@
             <h2>Crea tu casa de ensueño, prueba nuestro simulador interactivo.</h2>
             <a href="index.html#simulador_interactivo" class="boton">Simulador interactivo</a>
         </div>
+        <script src="hamburguesa.js"></script>
+        <script src="darkmode.js"></script>
         <!--Footer-->
     <footer class="footer">
         <div class="footer-content">
