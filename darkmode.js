@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
 
     // Cargar el sonido del interruptor
-    const switchSound = new Audio("switchSound.mp3"); // Ruta al sonido
+    const switchSound = new Audio("switchsound.mp3"); // Ruta al sonido
 
     // SVG de la Luna (Modo Claro)
     const moonIcon = `
